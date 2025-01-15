@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Intelligent_parking_system/Libraries/Newlib/syscalls.c&apos; to &apos;_sbrk.c&apos;" description="Rename resource &apos;syscalls.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Libraries/Newlib/syscalls.c" name="_sbrk.c" stamp="1736257752666" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Intelligent_parking_system/Libraries/Newlib/_sbrk.c&apos; to &apos;syscalls.c&apos;" description="Rename resource &apos;_sbrk.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Libraries/Newlib/_sbrk.c" name="syscalls.c" stamp="1736257903492" updateReferences="true"/>
+</session>

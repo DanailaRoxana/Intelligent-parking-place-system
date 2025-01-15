@@ -1,0 +1,32 @@
+/*
+ * main.c
+ *
+ *  Created on: 2024 Nov 10 17:19:10
+ *  Author: danai
+ */
+
+#include "DAVE.h"
+#include "FREERTOS/task.h"
+
+static void read_entry(void *pvParameters);
+
+int main(void)
+{
+  DAVE_STATUS_t status;
+
+  status = DAVE_Init();
+
+  if (status != DAVE_STATUS_SUCCESS)
+  {
+    XMC_DEBUG("DAVE APPs initialization failed\n");
+
+    while(1U)
+    {
+
+    }
+  }
+
+
+  xTaskCreate( read_entry, "Read Entry Sensor", 40U, NULL, ( tskIDLE_PRIORITY + 2 ), NULL );
+
+}

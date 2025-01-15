@@ -1,0 +1,41 @@
+13:52:21 **** Incremental Build of configuration Debug for project Intelligent_parking_system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+../main.c:17:3: warning: implicit declaration of function 'initialise_monitor_handles' [-Wimplicit-function-declaration]
+   initialise_monitor_handles();
+'Invoking: ARM-GCC C Compiler'
+   ^
+../main.c:25:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("\nStart\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent_parking_system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent_parking_system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent_parking_system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent_parking_system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent_parking_system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent_parking_system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+  ^
+../main.c:25:2: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c: In function 'CCU40_3_IRQHandler':
+../main.c:36:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("\npulse\n");
+  ^
+'Finished building: ../main.c'
+
+'Building target: Intelligent_parking_system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent_parking_system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent_parking_system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent_parking_system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent_parking_system.elf" "Intelligent_parking_system.hex"
+'Finished building: Intelligent_parking_system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent_parking_system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  22416	    252	   1252	  23920	   5d70	Intelligent_parking_system.elf
+'Finished building: Intelligent_parking_system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent_parking_system.elf" > "Intelligent_parking_system.lst"
+'Finished building: Intelligent_parking_system.lst'
+
+
+13:52:24 Build Finished (took 3s.761ms)
+

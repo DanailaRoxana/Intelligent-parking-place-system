@@ -1,0 +1,70 @@
+/*
+ * main.c
+ *
+ *  Created on: 2025 Jan 07 15:07:14
+ *  Author: danai
+ */
+
+
+
+
+#include "DAVE.h"                 //Declarations from DAVE Code Generation (includes SFR declaration)
+
+extern void initialise_monitor_handles(void);
+
+int main(void)
+{
+  initialise_monitor_handles();
+  DAVE_STATUS_t status;
+
+  status = DAVE_Init();           /* Initialization of DAVE APPs  */
+
+  if (status != DAVE_STATUS_SUCCESS)
+  {
+    /* Placeholder for error handler code. The while loop below can be replaced with an user error handler. */
+    XMC_DEBUG("DAVE APPs initialization failed\n");
+
+    while(1U)
+    {
+    	check_entrance();
+    }
+  }
+  printf("Start\n");
+//  TIMER_Start(&TIMER_TRIGGER);
+  /* Placeholder for user application code. The while loop below can be replaced with user application code. */
+  while(1U)
+  {
+
+  }
+}
+
+uint32_t measure_pulse(const DIGITAL_IO_t *ECHO)
+{
+    uint32_t pulse_start = 0, pulse_stop = 0;
+
+    while (DIGITAL_IO_GetInput(ECHO) == 0);
+    pulse_start = TIMER_GetTime(&TIMER_TRIGGER);
+    while (DIGITAL_IO_GetInput(ECHO) == 1);
+    pulse_stop = TIMER_GetTime(&TIMER_TRIGGER);
+
+	printf("\nstart = %lu, stop = %lu\n", pulse_start, pulse_stop);
+
+    return pulse_stop - pulse_start;
+}
+
+void check_entrance()
+{
+	uint32_t distance = measure_pulse(&ECHO);
+	printf("distance = %lu", distance);
+//	    if (distance < 20 /*&& free_spaces > 0*/) {
+//	//    	free_spaces--;
+//			printf("\nCar detected\n");
+//	    }
+}
+
+
+//void TriggerPulse(void)
+//{
+//	DIGITAL_IO_ToggleOutput(&TRIGGER);
+//	printf("toggle\n");
+//}
