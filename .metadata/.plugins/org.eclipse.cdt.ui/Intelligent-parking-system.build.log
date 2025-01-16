@@ -1,11 +1,11 @@
-20:55:09 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+19:21:03 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
 "\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
 'Invoking: ARM-GCC Print Size'
 "C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
    text	   data	    bss	    dec	    hex	filename
-  38588	    384	   1688	  40660	   9ed4	Intelligent-parking-system.elf
+  39684	    384	   1688	  41756	   a31c	Intelligent-parking-system.elf
 'Finished building: Intelligent-parking-system.siz'
 
 
-20:55:10 Build Finished (took 1s.70ms)
+19:21:04 Build Finished (took 933ms)
 

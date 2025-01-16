@@ -18498,3 +18498,1492 @@ rm -rf Libraries/XMCLib/src/xmc_usic.o Libraries/XMCLib/src/xmc_vadc.o Libraries
   38588	    384	   1688	  40660	   9ed4	Intelligent-parking-system.elf
 'Finished building: Intelligent-parking-system.siz'
 
+18:01:22 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38588	    384	   1688	  40660	   9ed4	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+18:11:48 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+'Invoking: ARM-GCC C Compiler'
+    printf("DAVE APPs initialization failed\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    ^
+'Finished building: ../main.c'
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:76:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:76:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:77:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:77:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:90:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:100:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:115:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:125:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:138:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38588	    384	   1688	  40660	   9ed4	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:15:27 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    printf("DAVE APPs initialization failed\n");
+'Finished building: ../main.c'
+    ^
+
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:76:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:76:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:77:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:77:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:90:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:100:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:115:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:125:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:138:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38580	    384	   1688	  40652	   9ecc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:29:25 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    printf("DAVE APPs initialization failed\n");
+subdir.mk:18: recipe for target 'main.o' failed
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:57:4: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+    check_entrance();
+    ^
+../main.c:58:4: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+    check_exit();
+    ^
+../main.c:59:4: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+    update_leds();
+    ^
+../main.c:63:4: warning: incompatible implicit declaration of built-in function 'printf'
+    printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+    ^
+../main.c: In function 'CommunicationTask':
+../main.c:77:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:77:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:78:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:78:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:91:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:57:4: note: previous implicit declaration of 'check_entrance' was here
+    check_entrance();
+    ^
+../main.c: In function 'check_entrance':
+../main.c:101:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:116:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:58:4: note: previous implicit declaration of 'check_exit' was here
+    check_exit();
+    ^
+../main.c: In function 'check_exit':
+../main.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:139:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:59:4: note: previous implicit declaration of 'update_leds' was here
+    update_leds();
+    ^
+In file included from ../main.c:4:0:
+../main.c: In function 'CCU40_2_IRQHandler':
+../main.c:156:37: error: 'null' undeclared (first use in this function)
+   xSemaphoreGiveFromISR(xSemaphore, null);
+                                     ^
+C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated/FREERTOS/semphr.h:638:130: note: in definition of macro 'xSemaphoreGiveFromISR'
+ #define xSemaphoreGiveFromISR( xSemaphore, pxHigherPriorityTaskWoken )    xQueueGiveFromISR( ( QueueHandle_t ) ( xSemaphore ), ( pxHigherPriorityTaskWoken ) )
+                                                                                                                                  ^
+../main.c:156:37: note: each undeclared identifier is reported only once for each function it appears in
+   xSemaphoreGiveFromISR(xSemaphore, null);
+                                     ^
+C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated/FREERTOS/semphr.h:638:130: note: in definition of macro 'xSemaphoreGiveFromISR'
+ #define xSemaphoreGiveFromISR( xSemaphore, pxHigherPriorityTaskWoken )    xQueueGiveFromISR( ( QueueHandle_t ) ( xSemaphore ), ( pxHigherPriorityTaskWoken ) )
+                                                                                                                                  ^
+make: *** [main.o] Error 1
+18:29:54 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:57:4: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+    check_entrance();
+    ^
+../main.c:58:4: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+    check_exit();
+    ^
+../main.c:59:4: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+    update_leds();
+    ^
+../main.c:63:4: warning: incompatible implicit declaration of built-in function 'printf'
+    printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+    ^
+../main.c: In function 'CommunicationTask':
+../main.c:77:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:77:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:78:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:78:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:91:6: warning: conflicting types for 'check_entrance'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+ void check_entrance(void)
+'Finished building: ../main.c'
+      ^
+
+../main.c:57:4: note: previous implicit declaration of 'check_entrance' was here
+    check_entrance();
+    ^
+../main.c: In function 'check_entrance':
+../main.c:101:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:116:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:58:4: note: previous implicit declaration of 'check_exit' was here
+    check_exit();
+    ^
+../main.c: In function 'check_exit':
+../main.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:139:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:59:4: note: previous implicit declaration of 'update_leds' was here
+    update_leds();
+    ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39844	    384	   1688	  41916	   a3bc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:30:27 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39844	    384	   1688	  41916	   a3bc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+18:32:11 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39844	    384	   1688	  41916	   a3bc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+18:32:25 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39844	    384	   1688	  41916	   a3bc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+18:34:05 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    ^
+'Finished building: ../main.c'
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:74:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:74:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:75:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:75:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:88:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:98:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:113:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:123:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:136:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38580	    384	   1688	  40652	   9ecc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:48:21 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+../main.c: In function 'main':
+'Building file: ../main.c'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+'Invoking: ARM-GCC C Compiler'
+    printf("DAVE APPs initialization failed\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    ^
+subdir.mk:18: recipe for target 'main.o' failed
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:56:4: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+    check_entrance();
+    ^
+../main.c:57:4: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+    check_exit();
+    ^
+../main.c:58:4: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+    update_leds();
+    ^
+../main.c:62:4: warning: incompatible implicit declaration of built-in function 'printf'
+    printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+    ^
+../main.c: At top level:
+../main.c:65:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../main.c: In function 'CommunicationTask':
+../main.c:76:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:76:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:77:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:77:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:90:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:56:4: note: previous implicit declaration of 'check_entrance' was here
+    check_entrance();
+    ^
+../main.c: In function 'check_entrance':
+../main.c:100:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:115:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:57:4: note: previous implicit declaration of 'check_exit' was here
+    check_exit();
+    ^
+../main.c: In function 'check_exit':
+../main.c:125:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:138:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:58:4: note: previous implicit declaration of 'update_leds' was here
+    update_leds();
+    ^
+make: *** [main.o] Error 1
+18:48:37 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+../main.c: In function 'main':
+'Building file: ../main.c'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+'Invoking: ARM-GCC C Compiler'
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+   ^
+'Finished building: ../main.c'
+../main.c: In function 'ProcessingTask':
+
+../main.c:57:4: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+    check_entrance();
+    ^
+../main.c:58:4: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+    check_exit();
+    ^
+../main.c:59:4: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+    update_leds();
+    ^
+../main.c:63:4: warning: incompatible implicit declaration of built-in function 'printf'
+    printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+    ^
+../main.c: In function 'CommunicationTask':
+../main.c:77:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:77:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:78:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:78:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:91:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:57:4: note: previous implicit declaration of 'check_entrance' was here
+    check_entrance();
+    ^
+../main.c: In function 'check_entrance':
+../main.c:101:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:116:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:58:4: note: previous implicit declaration of 'check_exit' was here
+    check_exit();
+    ^
+../main.c: In function 'check_exit':
+../main.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:139:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:59:4: note: previous implicit declaration of 'update_leds' was here
+    update_leds();
+    ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39852	    384	   1688	  41924	   a3c4	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:49:32 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+'Invoking: ARM-GCC C Compiler'
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:57:4: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+    check_entrance();
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    ^
+'Finished building: ../main.c'
+../main.c:58:4: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+    check_exit();
+
+    ^
+../main.c:59:4: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+    update_leds();
+    ^
+../main.c:63:4: warning: incompatible implicit declaration of built-in function 'printf'
+    printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+    ^
+../main.c: In function 'CommunicationTask':
+../main.c:77:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:77:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:78:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:78:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:91:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:57:4: note: previous implicit declaration of 'check_entrance' was here
+    check_entrance();
+    ^
+../main.c: In function 'check_entrance':
+../main.c:101:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:116:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:58:4: note: previous implicit declaration of 'check_exit' was here
+    check_exit();
+    ^
+../main.c: In function 'check_exit':
+../main.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:139:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:59:4: note: previous implicit declaration of 'update_leds' was here
+    update_leds();
+    ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39876	    384	   1688	  41948	   a3dc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:52:23 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+../main.c: In function 'main':
+'Building file: ../main.c'
+'Invoking: ARM-GCC C Compiler'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+'Finished building: ../main.c'
+
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:57:4: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+    check_entrance();
+    ^
+../main.c:58:4: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+    check_exit();
+    ^
+../main.c:59:4: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+    update_leds();
+    ^
+../main.c:63:4: warning: incompatible implicit declaration of built-in function 'printf'
+    printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+    ^
+../main.c: In function 'CommunicationTask':
+../main.c:77:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:77:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:78:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:78:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:91:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:57:4: note: previous implicit declaration of 'check_entrance' was here
+    check_entrance();
+    ^
+../main.c: In function 'check_entrance':
+../main.c:101:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:116:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:58:4: note: previous implicit declaration of 'check_exit' was here
+    check_exit();
+    ^
+../main.c: In function 'check_exit':
+../main.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:139:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:59:4: note: previous implicit declaration of 'update_leds' was here
+    update_leds();
+    ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39876	    384	   1688	  41948	   a3dc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:52:59 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+'Invoking: ARM-GCC C Compiler'
+../main.c: In function 'CommunicationTask':
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+'Finished building: ../main.c'
+../main.c:89:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:99:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:114:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:124:2: warning: incompatible implicit declaration of built-in function 'printf'
+
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:137:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38580	    384	   1688	  40652	   9ecc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+18:53:18 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  38580	    384	   1688	  40652	   9ecc	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+19:01:22 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+../main.c: In function 'main':
+'Building file: ../main.c'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+'Invoking: ARM-GCC C Compiler'
+    printf("DAVE APPs initialization failed\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    ^
+'Finished building: ../main.c'
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:89:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:99:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:118:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:128:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:145:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39724	    384	   1688	  41796	   a344	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:02:22 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39724	    384	   1688	  41796	   a344	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+19:03:16 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    printf("DAVE APPs initialization failed\n");
+'Finished building: ../main.c'
+    ^
+
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:89:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:99:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:118:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:128:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:145:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39724	    384	   1688	  41796	   a344	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:07:05 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+'Finished building: ../main.c'
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:89:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:99:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:118:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:128:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:145:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39724	    384	   1688	  41796	   a344	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:08:50 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+../main.c: In function 'main':
+'Building file: ../main.c'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+'Invoking: ARM-GCC C Compiler'
+    printf("DAVE APPs initialization failed\n");
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    ^
+'Finished building: ../main.c'
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:89:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:99:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:118:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:128:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:145:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39724	    384	   1688	  41796	   a344	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:11:48 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+    printf("DAVE APPs initialization failed\n");
+'Finished building: ../main.c'
+    ^
+
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:89:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:99:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:118:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:128:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:145:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39724	    384	   1688	  41796	   a344	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:15:14 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+../main.c: In function 'main':
+'Building file: ../main.c'
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+'Invoking: ARM-GCC C Compiler'
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:88:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:98:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:120:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:130:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:147:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+'Finished building: ../main.c'
+
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39740	    384	   1688	  41812	   a354	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:16:23 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39740	    384	   1688	  41812	   a354	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+19:18:46 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Building file: ../main.c'
+'Invoking: ARM-GCC C Compiler'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC1100_T038x0064 -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/XMCLib/inc" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries/CMSIS/Infineon/XMC1100_series/Include" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Dave/Generated" -I"C:/Users/danai/FisiereleMele/de mutat/uni/master/an1/sem1/sdtr/proiect/Intelligent-parking-place-system/Intelligent-parking-system/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+'Finished building: ../main.c'
+
+../main.c: In function 'main':
+../main.c:29:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    printf("DAVE APPs initialization failed\n");
+    ^
+../main.c:29:4: warning: incompatible implicit declaration of built-in function 'printf'
+../main.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Start\n");
+   ^
+../main.c: In function 'ProcessingTask':
+../main.c:55:3: warning: implicit declaration of function 'check_entrance' [-Wimplicit-function-declaration]
+   check_entrance();
+   ^
+../main.c:56:3: warning: implicit declaration of function 'check_exit' [-Wimplicit-function-declaration]
+   check_exit();
+   ^
+../main.c:57:3: warning: implicit declaration of function 'update_leds' [-Wimplicit-function-declaration]
+   update_leds();
+   ^
+../main.c:61:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("ProcessingTask duration: %lu us\n", (end_time - start_time)*1000);
+         ^
+../main.c: In function 'CommunicationTask':
+../main.c:75:10: warning: incompatible implicit declaration of built-in function 'printf'
+          printf("occupied_spaces = %lu\n", occupied_spaces);
+          ^
+../main.c:75:10: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+../main.c:76:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf(message, "Free spaces: %d\n", (PARK_SPACES - occupied_spaces));
+             ^
+../main.c:76:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../main.c: At top level:
+../main.c:88:6: warning: conflicting types for 'check_entrance'
+ void check_entrance(void)
+      ^
+../main.c:55:3: note: previous implicit declaration of 'check_entrance' was here
+   check_entrance();
+   ^
+../main.c: In function 'check_entrance':
+../main.c:98:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_in = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:117:6: warning: conflicting types for 'check_exit'
+ void check_exit(void)
+      ^
+../main.c:56:3: note: previous implicit declaration of 'check_exit' was here
+   check_exit();
+   ^
+../main.c: In function 'check_exit':
+../main.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("distance_out = %lu\n", pulse_stop - pulse_start);
+  ^
+../main.c: At top level:
+../main.c:144:6: warning: conflicting types for 'update_leds'
+ void update_leds(void)
+      ^
+../main.c:57:3: note: previous implicit declaration of 'update_leds' was here
+   update_leds();
+   ^
+'Building target: Intelligent-parking-system.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -u _printf_float -Wl,-Map,"Intelligent-parking-system.map" -specs=rdimon.specs -mcpu=cortex-m0 -mthumb -g -gdwarf-2 -o "Intelligent-parking-system.elf" "@objects.rsp"  -lm
+'Finished building target: Intelligent-parking-system.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "Intelligent-parking-system.elf" "Intelligent-parking-system.hex"
+'Finished building: Intelligent-parking-system.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39684	    384	   1688	  41756	   a31c	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "Intelligent-parking-system.elf" > "Intelligent-parking-system.lst"
+'Finished building: Intelligent-parking-system.lst'
+
+19:21:03 **** Incremental Build of configuration Debug for project Intelligent-parking-system ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j12 all 
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "Intelligent-parking-system.elf"
+   text	   data	    bss	    dec	    hex	filename
+  39684	    384	   1688	  41756	   a31c	Intelligent-parking-system.elf
+'Finished building: Intelligent-parking-system.siz'
+
